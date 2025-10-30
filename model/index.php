@@ -62,7 +62,7 @@ function imprimirPedido($pedido, $menu) {
             if ($articulo->nombre === $nombrePedido) {
                 $encontrado = true;
                 if ($articulo->disponibilidad) {
-                    echo "<tr><td>{$articulo->nombre}</td><td>{$articulo->precio}€</td></tr>";
+                    echo "<tr><td>{$articulo->nombre}</td><td>€{$articulo->precio}</td></tr>";
                     $total += $articulo->precio;
                 } else {
                     echo "<tr><td>{$articulo->nombre}</td><td>No disponible</td></tr>";
@@ -75,7 +75,7 @@ function imprimirPedido($pedido, $menu) {
         }
     }
 
-    echo "<tr><td>Total</td><td>€{$total}</td></tr>";
+    echo "<tr><td><b>Total</b></td><td><b>€{$total}</b></td></tr>";
     echo "</table>";
 }
 
